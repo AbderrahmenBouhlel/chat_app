@@ -1,0 +1,141 @@
+.roomContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .friendInfo{
+        height: 76px;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        padding: 0 2rem;
+        gap: 1rem;
+        .friendPhoto{
+            width: 50px;
+            height: 50px;
+            display: flex;
+        }
+        .freindStatus{
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1rem;
+
+            .name{
+                margin-top: 1rem;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            .status{
+                font-size: .9rem;
+                color: rgba(0,0,0,.6);
+            }
+
+        }
+    }
+    .room{
+        height: 100%;
+        background-image: url("../../../assets/wallapaper.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        filter:brightness(.94) opacity(.8);
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(150, 167, 192, 0.2);
+            z-index: 1;
+        }
+        & > * {
+            position: relative;
+            z-index: 2;
+        }
+        .inputCont{
+            position: fixed;
+            top: 100%;
+            transform: translateY(-100%);
+            width: 100%;
+            display: flex;
+            background-color: white;
+            height: fit-content;
+            align-items: center;
+            padding-left: 3rem;
+            padding-right: 2rem;
+
+            .messageInput{
+                width: 100%;
+                height: fit-content;
+                max-height: 250px;
+                background-color: transparent;
+                overflow-y: auto;
+                border: none;
+                padding: 0 1rem;
+                outline: none;
+                font-size: .9rem;
+                align-content: center;
+            }
+            .icon{
+                height: 100%;
+                cursor: pointer;
+            }
+            .submitBtn{
+                background: transparent;
+                border: none;
+                .searchIcon{
+                    width: 25px;
+                }
+            }
+            
+            .sendIcon{
+                width: 40px;
+                color: rgb(9, 124, 133);
+            }
+        }
+
+        .messagesContainer{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 10px 15px;
+            gap: .8rem;
+            overflow-y: auto;
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+            .message{
+                padding: 7px;
+          
+                width: fit-content;
+                border-radius: 10px;
+                max-width: 50%;
+                text-wrap: wrap;
+                p{
+                    text-wrap: wrap;
+                    word-wrap: break-word;
+                    
+
+                }
+            }
+           
+            .message.userMessage{
+                background-color: rgba(179, 223, 248, 0.8);
+                align-self: flex-end;
+            }
+            .message.friendMessage{
+                background-color: rgba(255, 255, 255,.8);
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+.tippiMsg{
+    font-size: .7rem;
+}

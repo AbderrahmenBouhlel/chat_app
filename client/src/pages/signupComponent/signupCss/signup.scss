@@ -1,0 +1,74 @@
+.authForm{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1.5rem;
+    .salut{
+        font-size: 1rem;
+    }
+    .inputField{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        label{
+            font-size: .9rem;
+        }
+        input{
+            width: 100%;
+            height: 1.5rem;
+            height: 35px;
+            padding: .5rem;
+            border: 1px solid rgba(0,0,0,.5);
+            border-radius: 5px;
+        }
+        input:focus{
+           outline: 1px solid var(--main--color);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        
+        .labelContainer{
+            background-color: rgba(190, 208, 209, 0.6);
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .removeFileBtn{
+                border: none;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 8px;
+                cursor: pointer;
+            }
+            .fileLabel{
+                cursor: pointer;
+            }
+
+        }
+       
+        
+    }
+    .submit-btn{
+        height: 2rem;
+        background-color: var(--main--color);
+        color: white;
+        border: none;
+        height: 40px;
+        cursor: pointer;
+    }
+    .existingAcount{
+        align-self: center;
+        span{
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+}

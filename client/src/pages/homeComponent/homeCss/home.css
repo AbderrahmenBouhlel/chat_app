@@ -1,0 +1,53 @@
+.home {
+  z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+}
+.home .roomSection {
+  width: 100%;
+  position: relative;
+}
+.home .roomSection .container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 68, 121, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home .roomSection .container .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home .roomSection .container .logo .name {
+  font-family: "Playwrite AU NSW";
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.home .roomSection .container .logo .icon {
+  font-size: 4rem;
+  color: rgb(4, 158, 150);
+}
+.home .roomSection .container .text {
+  font-size: 1.1rem;
+  margin: 1.2rem 0;
+  color: rgba(16, 21, 49, 0.5);
+}
+
+.layer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(64, 73, 94, 0.4);
+  z-index: -1;
+  top: 0;
+  left: 0;
+}/*# sourceMappingURL=home.css.map */

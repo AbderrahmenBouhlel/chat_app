@@ -1,0 +1,43 @@
+:root{
+    --main--color : rgb(49, 163, 184);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+
+
+.verifyMsg {
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 9px;
+    animation: 0.4s ease-in-out verifyMsgAnimation forwards;
+    opacity: 1;
+    font-size: .9rem;
+    color: black;
+    transition: .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+    z-index: 2000;
+    .icon{
+        font-size: 1.2rem;
+        color: green ;
+    }
+}

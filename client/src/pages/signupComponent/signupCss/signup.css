@@ -1,0 +1,70 @@
+.authForm {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1.5rem;
+}
+.authForm .salut {
+  font-size: 1rem;
+}
+.authForm .inputField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.authForm .inputField label {
+  font-size: 0.9rem;
+}
+.authForm .inputField input {
+  width: 100%;
+  height: 1.5rem;
+  height: 35px;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+.authForm .inputField input:focus {
+  outline: 1px solid var(--main--color);
+}
+.authForm .inputField input[type=file] {
+  display: none;
+}
+.authForm .inputField .labelContainer {
+  background-color: rgba(190, 208, 209, 0.6);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.authForm .inputField .labelContainer .removeFileBtn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px;
+  cursor: pointer;
+}
+.authForm .inputField .labelContainer .fileLabel {
+  cursor: pointer;
+}
+.authForm .submit-btn {
+  height: 2rem;
+  background-color: var(--main--color);
+  color: white;
+  border: none;
+  height: 40px;
+  cursor: pointer;
+}
+.authForm .existingAcount {
+  align-self: center;
+}
+.authForm .existingAcount span {
+  cursor: pointer;
+  font-weight: bold;
+}/*# sourceMappingURL=signup.css.map */

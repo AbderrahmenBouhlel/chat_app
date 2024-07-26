@@ -1,0 +1,55 @@
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255),
+    online_status ENUM('online', 'away', 'offline') DEFAULT 'offline',
+    last_active TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE friend_requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    status ENUM('pending', 'accepted', 'rejected'),
+    timestamp DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (receiver_id) REFERENCES users(id) ON DELETE CASCADE,
+    UNIQUE(sender_id, receiver_id)
+);
+
+CREATE TABLE friendships (
+    user_id INT NOT NULL,
+    friend_id INT NOT NULL,
+    status ENUM('active', 'blocked'),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (friend_id) REFERENCES users(id) ON DELETE CASCADE,
+    PRIMARY KEY (user_id, friend_id)  -- Added primary key constraint
+);
+
+CREATE TABLE chat_rooms (
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
+    room_name VARCHAR(50) NOT NULL,  -- Changed to VARCHAR and made it NOT NULL
+    is_private ENUM('yes', 'no') DEFAULT 'no',  -- Corrected enum values
+    created_by INT NOT NULL,
+    FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE
+);
+CREATE TABLE user_chat_rooms (
+    user_id INT NOT NULL,
+    room_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES chat_rooms(room_id) ON DELETE CASCADE,
+    PRIMARY KEY (user_id, room_id)  -- Added primary key constraint
+);
+
+
+CREATE TABLE messages (
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    room_id INT NOT NULL,
+    content VARCHAR(255),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (room_id) REFERENCES chat_rooms(room_id) ON DELETE CASCADE
+);
+
